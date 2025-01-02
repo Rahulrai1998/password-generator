@@ -23,5 +23,8 @@ function createPassword() {
 
 function copyPassword() {
   passwordBox.select();
-  document.execCommand("copy");
+  passwordBox.setSelectionRange(0, 15);
+  navigator.clipboard.writeText(passwordBox.value);
+
+  alert(passwordBox.value, " Copied!!");
 }
